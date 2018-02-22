@@ -1,0 +1,78 @@
+﻿<SchemaParcels>
+  <eDocument Version="01" GUID="00000000-0000-0000-0000-000000000000"/>
+  <FormingMethod FormingMethod="1"/>
+  <Document>
+    <Name>Решение ОМСУ</Name>
+    <Number>Номер решения ОМСУ</Number>
+    <Date>2016-11-18</Date>
+    <IssueOrgans>
+      <IssueOrgan>Наименование ОМСУ</IssueOrgan>
+    </IssueOrgans>
+  </Document>
+  <NewParcels>
+    <NewParcel Definition="00:00:0000000:ЗУ1">
+      <CadastralBlock>00:00:0000000</CadastralBlock>
+      <Area>
+        <Area>2940</Area>
+        <Unit>055</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="ID1">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+        </Spatial_Element>
+      </Entity_Spatial>
+      <Note>Адрес участка из решения ОМСУ</Note>
+      <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>
+      <Category Category="003008000000"/>
+    </NewParcel>
+    <NewParcel Definition="00:00:0000000:ЗУ2">
+      <CadastralBlock>00:00:0000000</CadastralBlock>
+      <Area>
+        <Area>1798</Area>
+        <Unit>055</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="ID1">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+          </Spelement_Unit>
+        </Spatial_Element>
+      </Entity_Spatial>
+      <Note>Адрес участка из решения ОМСУ</Note>
+      <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>
+      <Category Category="003008000000"/>
+    </NewParcel>
+  </NewParcels>
+  <Coord_Systems>
+    <Coord_System Name="СК кадастрового округа" Cs_Id="ID1"/>
+  </Coord_Systems>
+  <ParcelSchema_In_Block>
+    <AppliedFile Name="SchemaParcels_00000000-0000-0000-0000-000000000000.pdf"/>
+  </ParcelSchema_In_Block>
+</SchemaParcels>
