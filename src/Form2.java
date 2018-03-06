@@ -6,45 +6,88 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
+import javax.swing.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Form2 {
 
-    static void display() {
-        Stage form2 = new Stage();
+    static void rewriteForm1(String strings[], ArrayList<String> imgs, ArrayList<String> arrayX, ArrayList<String> arrayY) {
+        String filePath = "form1.xml";
+        File xmlFile = new File(filePath);
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder;
+        try {
+            builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
 
-        form2.setTitle("Форма 2");
+            // обновляем значения
+            Controller.updateElementValue(doc, "Document", "Name", strings[0]);
+            Controller.updateElementValue(doc, "Document", "Number", strings[1]);
+            Controller.updateElementValue(doc, "Document", "Date", strings[2]);
+            Controller.updateElementValue(doc, "Document", "IssueOrgan", strings[3]);
 
-        // form1.getIcons().add(new Image("info_.jpg"));
-        form2.setHeight(190);
-        form2.setWidth(380);
+            Controller.updateElementValue(doc, "NewParcels", "CadastralBlock", strings[4]);
+            Controller.updateElementValueIntros(doc, "Area", "Area", strings[5]);
+            Controller.updateElementValue(doc, "Area", "Unit", strings[6]);
 
-        Label label1 = new javafx.scene.control.Label("Тут одно2");
-        Label label2 = new Label("Тут другое2");
-
-        TextField text1 = new TextField();
-        TextField text2 = new TextField();
+            Controller.updateElementValueIntro(doc, "Entity_Spatial", "Ent_Sys", strings[7]);
 
 
+            Controller.updateElementValueIntro(doc, "NewOrdinate", "X", strings[8]);
+            Controller.updateElementValueIntro(doc, "NewOrdinate", "Y", strings[9]);
+            Controller.updateElementValueIntro(doc, "NewOrdinate", "Num_Geopoint", "1");
 
-        VBox vForm1Text = new VBox(15);
-        vForm1Text.setPadding(new Insets(13));
-        vForm1Text.getChildren().addAll(label1, label2);
-        vForm1Text.setAlignment(Pos.CENTER);
 
-        VBox vForm1Enter = new VBox(15);
-        vForm1Enter.setPadding(new Insets(13));
-        vForm1Enter.getChildren().addAll(text1,text2);
-        vForm1Enter.setAlignment(Pos.CENTER);
+            Controller.updateElementValue(doc, "NewParcels", "Note", strings[10]);
 
-        HBox hForm1 = new HBox(15);
-        hForm1.setPadding(new Insets(13));
-        hForm1.getChildren().addAll(vForm1Text, vForm1Enter);
-        hForm1.setAlignment(Pos.CENTER);
+            Controller.updateElementValueIntro(doc, "Utilization", "ByDoc", strings[11]);
 
-        Scene sceneAbout = new Scene(hForm1);
+            Controller.updateElementValueIntro(doc, "Category", "Category", strings[12]);
+            Controller.updateElementValueIntro(doc, "Coord_System", "Cs_Id", strings[7]);
+            Controller.updateElementValueIntro(doc, "Coord_System", "Name", strings[13]);
 
-        form2.setScene(sceneAbout);
-        form2.show();
+
+            //определение длины массива имгс и в зависимость от этого добавление картинок
+            Controller.updateElementValueIntro(doc, "AppliedFile", "Name", strings[14]);
+            if (imgs.size() > 0) {
+                for (int i = 0; i <= imgs.size() - 1; i++) {    //добавить нужное количество новых
+                    Controller.addElement(doc, "ParcelSchema_In_Block", "AppliedFile", "Name", imgs.get(i));
+                }
+            }
+
+            if (arrayX.size() > 0 && arrayY.size() > 0) {
+                for (int i = 0; i <= arrayX.size() - 1; i++) {    //добавить нужное количество новых
+                    int d = i + 2;
+                    String d1 = String.valueOf(d);
+                    Node nodeName = doc.getElementsByTagName("Spatial_Element").item(0);
+                    Element newElement = doc.createElement("Spelement_Unit");
+                    nodeName.appendChild(newElement);
+                    newElement.setAttribute("Type_Unit", "Точка");
+
+
+                    Element newElement1 = doc.createElement("NewOrdinate");
+                    newElement.appendChild(newElement1);
+                    newElement1.setAttribute("Num_Geopoint", d1);
+                    newElement1.setAttribute("Y", arrayY.get(i));
+                    newElement1.setAttribute("X", arrayX.get(i));
+                }
+            }
+            Controller.save(doc);
+//
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
 
     }
 }
+

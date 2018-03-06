@@ -1,43 +1,35 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <SchemaParcels>
   <eDocument GUID="00000000-0000-0000-0000-000000000000" Version="01"/>
   <FormingMethod FormingMethod="1"/>
   <Document>
-    <Name>квп</Name>
-    <Number>квп</Number>
-    <Date>квп</Date>
+    <Name>цук</Name>
+    <Number>цук</Number>
+    <Date>цук</Date>
     <IssueOrgans>
-      <IssueOrgan>квп</IssueOrgan>
+      <IssueOrgan>цук</IssueOrgan>
     </IssueOrgans>
   </Document>
   <NewParcels>
     <NewParcel Definition="00:00:0000000:ЗУ1">
-      <CadastralBlock>квп</CadastralBlock>
-      <Area>квп<Area>2940</Area>
-        <Unit>квп</Unit>
+      <CadastralBlock>цу</CadastralBlock>
+      <Area>
+        <Area>кцц</Area>
+        <Unit>ук</Unit>
       </Area>
-      <Entity_Spatial Ent_Sys="ID1">
+      <Entity_Spatial Ent_Sys="цук">
         <Spatial_Element>
           <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+            <NewOrdinate Num_Geopoint="1" X="цук" Y="цук"/>
           </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate X="3456789" Y="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
-          </Spelement_Unit>
-        </Spatial_Element>
+         <Spelement_Unit Type_Unit="Точка">
+<NewOrdinate Num_Geopoint="2" X="2" Y="2"/>
+</Spelement_Unit>
+</Spatial_Element>
       </Entity_Spatial>
-      <Note>квп</Note>
-      <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>
-      <Category Category="003008000000"/>
+      <Note>цук</Note>
+      <Utilization ByDoc="цук"/>
+      <Category Category="цук"/>
     </NewParcel>
     <NewParcel Definition="00:00:0000000:ЗУ2">
       <CadastralBlock>00:00:0000000</CadastralBlock>
@@ -70,9 +62,10 @@
     </NewParcel>
   </NewParcels>
   <Coord_Systems>
-    <Coord_System Cs_Id="ID1" Name="СК кадастрового округа"/>
+    <Coord_System Cs_Id="цук" Name="цук"/>
   </Coord_Systems>
   <ParcelSchema_In_Block>
-    <AppliedFile Name="SchemaParcels_00000000-0000-0000-0000-000000000000.pdf"/>
-  </ParcelSchema_In_Block>
+    <AppliedFile Name="Images\Chrysanthemum.jpg"/>
+  <AppliedFile Name="кк"/>
+</ParcelSchema_In_Block>
 </SchemaParcels>

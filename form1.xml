@@ -19,21 +19,9 @@
       <Entity_Spatial Ent_Sys="ID1">
         <Spatial_Element>
           <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
+            <NewOrdinate Num_Geopoint = "1" Y="" X=""/>
           </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
-          </Spelement_Unit>
-          <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Y="1234567890123456789" X="1234567890123456789"/>
-          </Spelement_Unit>
-        </Spatial_Element>
+         </Spatial_Element>
       </Entity_Spatial>
       <Note>Адрес участка из решения ОМСУ</Note>
       <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SchemaParcels>
+  <eDocument GUID="00000000-0000-0000-0000-000000000000" Version="01"/>
+  <FormingMethod FormingMethod="1"/>
+  <Document>
+    <Name>1</Name>
+    <Number>1</Number>
+    <Date>1</Date>
+    <IssueOrgans>
+      <IssueOrgan>1</IssueOrgan>
+    </IssueOrgans>
+  </Document>
+  <NewParcels>
+    <NewParcel>
+      <CadastralBlock>1</CadastralBlock>
+      <Area>
+        <Area>1</Area>
+        <Unit>1</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="1">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Num_Geopoint="1" X="1" Y="1"/>
+          </Spelement_Unit>
+         </Spatial_Element>
+      </Entity_Spatial>
+      <Note>1</Note>
+      <Utilization ByDoc="1"/>
+      <Category Category="1"/>
+    </NewParcel>
+  </NewParcels>
+  <Coord_Systems>
+    <Coord_System Cs_Id="1" Name="1"/>
+  </Coord_Systems>
+  <ParcelSchema_In_Block>
+    <AppliedFile Name="Images\Chrysanthemum.jpg"/>
+  </ParcelSchema_In_Block>
+</SchemaParcels>
