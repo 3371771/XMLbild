@@ -57,6 +57,7 @@ class Form {
     private static TextField newImage;
 
     public static Stage form1;
+    public static Scene sceneMain;
 
     static void display() {
         form1 = new Stage();
@@ -80,6 +81,7 @@ class Form {
         Label labelPoint1X = new Label("Точка 1 X");
         Label labelPoint1Y = new Label("Точка 1 Y");
         Label labelAdres = new Label("Адрес");
+        labelAdres.setId("adres");
         Label labelUtil = new Label("Применение");
         Label labelCategory = new Label("Категория");
         Label labelCoordSys = new Label("Система координат");
@@ -131,44 +133,49 @@ class Form {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+                //возможно это нужно будет перенести в Conroller.save
                 gridaddFeldNumber = 5;
                 numberPoitValue = 2;
                 grid1addRowNumber = 11;
                 clickCount = 0;
+                Controller.arrayX.clear();
+                Controller.arrayY.clear();
+                Controller.imgs.clear();
             }
         });
 
         //кнопка добавления картинок
         Button addImg = new Button("+");
-        addImg.setOnAction(e -> {
-            newImage = new TextField();
-            newImage.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
-                 if ( clickCount == 0 || newImage.getLength() == 0) {
-                      try {
-                          Controller.openFile(newImage,form1);
-                      } catch (IOException e1) {
-                          e1.printStackTrace();
-                      }
-                      clickCount++;
-              }
-              });
-
-                newImage.setPromptText("Выберите картинку");
-                gridaddFeldNumber++;
-                mainGrid1.add(newImage, 1, gridaddFeldNumber);
-
-//                newImage.setOnKeyPressed(ke -> {
-//                    if (ke.getCode().equals(KeyCode.ENTER) && newImage.getLength() != 0) {
-//                        //проверка правильности ввода
-//                        infoBox("Внимание!!", "Проверьте введенные данные", "Все правильно?");
-//                        if (answere) {
-//                            //добавленеи в массив текста из окна ввода
-//                            imgs.add(newImage.getText());
-//                            newImage.setDisable(true);
-//                        }
-//                    }
-//                });
-            Controller.noFocusImg(newImage);
+        addImg.setOnAction(e -> { test();
+//            newImage = new TextField();
+//            newImage.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
+//                System.out.println(clickCount);
+//                System.out.println(newImage.getLength());
+//                 if ( clickCount == 0 || newImage.getLength() == 0) {
+//                      try {
+//                          Controller.openFile(newImage,form1);
+//                      } catch (IOException e1) {
+//                          e1.printStackTrace();
+//                      }
+//                      clickCount++;
+//                 }
+//            });
+//                newImage.setPromptText("Выберите картинку");
+//                gridaddFeldNumber++;
+//                mainGrid1.add(newImage, 1, gridaddFeldNumber);
+//
+////                newImage.setOnKeyPressed(ke -> {
+////                    if (ke.getCode().equals(KeyCode.ENTER) && newImage.getLength() != 0) {
+////                        //проверка правильности ввода
+////                        infoBox("Внимание!!", "Проверьте введенные данные", "Все правильно?");
+////                        if (answere) {
+////                            //добавленеи в массив текста из окна ввода
+////                            imgs.add(newImage.getText());
+////                            newImage.setDisable(true);
+////                        }
+////                    }
+////                });
+//            Controller.noFocusImg(newImage);
         });
 
         //кнопка добавления точки
@@ -294,7 +301,7 @@ class Form {
         BorderPane.setMargin(cast, new Insets(15, 27, 20, 20));
         //скроллинг
         scrollPane.setContent(bMain);
-        Scene sceneMain = new Scene(scrollPane);
+        sceneMain = new Scene(scrollPane);
 
         form1.setScene(sceneMain);
         form1.show();
@@ -308,6 +315,9 @@ class Form {
                 grid1addRowNumber = 11;
                 gridaddFeldNumber = 5;
                 clickCount = 0;
+                Controller.arrayX.clear();
+                Controller.arrayY.clear();
+                Controller.imgs.clear();
                 form1.close();
             }
         });
@@ -407,5 +417,11 @@ class Form {
         } catch (Exception exc) {
             exc.printStackTrace();
         }
+    }
+
+    private static void test () {
+
+        Label test = (Label) sceneMain.lookup("#adres");
+       test.setText("новы");
     }
 }

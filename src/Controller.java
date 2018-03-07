@@ -5,9 +5,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.w3c.dom.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
@@ -201,7 +202,6 @@ class Controller {
         textField.focusedProperty().addListener( (obs, oldValue, newValue) -> {
             if (newValue) { }
             else if (textField.getLength() != 0) {
-                System.out.println(textField.getLength());
                 infoBox("Внимание!!", "Проверьте данные новой картинки", "Все правильно?");
                 if (answere) {
                     //добавленеи в массив текста из окна ввода

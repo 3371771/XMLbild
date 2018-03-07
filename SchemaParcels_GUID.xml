@@ -3,33 +3,30 @@
   <eDocument GUID="00000000-0000-0000-0000-000000000000" Version="01"/>
   <FormingMethod FormingMethod="1"/>
   <Document>
-    <Name>цук</Name>
-    <Number>цук</Number>
-    <Date>цук</Date>
+    <Name>2</Name>
+    <Number>2</Number>
+    <Date>2</Date>
     <IssueOrgans>
-      <IssueOrgan>цук</IssueOrgan>
+      <IssueOrgan>22</IssueOrgan>
     </IssueOrgans>
   </Document>
   <NewParcels>
     <NewParcel Definition="00:00:0000000:ЗУ1">
-      <CadastralBlock>цу</CadastralBlock>
+      <CadastralBlock>2</CadastralBlock>
       <Area>
-        <Area>кцц</Area>
-        <Unit>ук</Unit>
+        <Area>22</Area>
+        <Unit>2</Unit>
       </Area>
-      <Entity_Spatial Ent_Sys="цук">
+      <Entity_Spatial Ent_Sys="22">
         <Spatial_Element>
           <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Num_Geopoint="1" X="цук" Y="цук"/>
+            <NewOrdinate Num_Geopoint="1" X="2" Y="2"/>
           </Spelement_Unit>
-         <Spelement_Unit Type_Unit="Точка">
-<NewOrdinate Num_Geopoint="2" X="2" Y="2"/>
-</Spelement_Unit>
-</Spatial_Element>
+         </Spatial_Element>
       </Entity_Spatial>
-      <Note>цук</Note>
-      <Utilization ByDoc="цук"/>
-      <Category Category="цук"/>
+      <Note>2</Note>
+      <Utilization ByDoc="2"/>
+      <Category Category="2"/>
     </NewParcel>
     <NewParcel Definition="00:00:0000000:ЗУ2">
       <CadastralBlock>00:00:0000000</CadastralBlock>
@@ -62,10 +59,24 @@
     </NewParcel>
   </NewParcels>
   <Coord_Systems>
-    <Coord_System Cs_Id="цук" Name="цук"/>
+    <Coord_System Cs_Id="22" Name="2"/>
   </Coord_Systems>
   <ParcelSchema_In_Block>
-    <AppliedFile Name="Images\Chrysanthemum.jpg"/>
-  <AppliedFile Name="кк"/>
+    <AppliedFile Name="2"/>
+  <AppliedFile Name="11"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="Images\Chrysanthemum.jpg"/>
+<AppliedFile Name="2"/>
+<AppliedFile Name="2"/>
+<AppliedFile Name="новая"/>
 </ParcelSchema_In_Block>
 </SchemaParcels>
