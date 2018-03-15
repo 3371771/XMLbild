@@ -3,36 +3,40 @@
   <eDocument GUID="00000000-0000-0000-0000-000000000000" Version="01"/>
   <FormingMethod FormingMethod="1"/>
   <Document>
-    <Name>1</Name>
-    <Number>2</Number>
-    <Date>2</Date>
+    <Name>к</Name>
+    <Number>к</Number>
+    <Date>к</Date>
     <IssueOrgans>
-      <IssueOrgan>2</IssueOrgan>
+      <IssueOrgan>к</IssueOrgan>
     </IssueOrgans>
   </Document>
   <NewParcels>
     <NewParcel>
-      <CadastralBlock>22</CadastralBlock>
+      <CadastralBlock>к</CadastralBlock>
       <Area>
-        <Area>2</Area>
-        <Unit>2</Unit>
+        <Area>к</Area>
+        <Unit>к</Unit>
       </Area>
-      <Entity_Spatial Ent_Sys="2">
+      <Entity_Spatial Ent_Sys="к">
         <Spatial_Element>
           <Spelement_Unit Type_Unit="Точка">
-            <NewOrdinate Num_Geopoint="1" X="2" Y="2"/>
+            <NewOrdinate Num_Geopoint="1" X="к" Y="к"/>
           </Spelement_Unit>
-         </Spatial_Element>
+         <Spelement_Unit Type_Unit="Точка">
+<NewOrdinate Num_Geopoint="2" X="е" Y="е"/>
+</Spelement_Unit>
+</Spatial_Element>
       </Entity_Spatial>
-      <Note>2</Note>
-      <Utilization ByDoc="2"/>
-      <Category Category="2"/>
+      <Note>к</Note>
+      <Utilization ByDoc="к"/>
+      <Category Category="к"/>
     </NewParcel>
   </NewParcels>
   <Coord_Systems>
-    <Coord_System Cs_Id="2" Name="2"/>
+    <Coord_System Cs_Id="к" Name="к"/>
   </Coord_Systems>
   <ParcelSchema_In_Block>
-    <AppliedFile Name="Images\Chrysanthemum.jpg"/>
-  </ParcelSchema_In_Block>
+    <AppliedFile Name="Images\Desert.jpg"/>
+  <AppliedFile Name="Images\Koala.jpg"/>
+</ParcelSchema_In_Block>
 </SchemaParcels>
