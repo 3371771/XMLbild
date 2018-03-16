@@ -2,7 +2,10 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -21,28 +24,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 class Form {
 
-    //объявление
-    private static NewField textName;
-    private static NewField textNumber;
-    private static NewField textDate;
-    private static NewField textOSMUname;
-    private static NewField textCadastr;
-    private static NewField textArea;
-    private static NewField textUnit;
-    private static NewField textID;
-
-    private static NewField textPoint1X;
-    private static NewField textPoint1Y;
-
-    private static NewField textAdres;
-    private static NewField textUtil;
-    private static NewField textCategory;
-    private static NewField textCoordSys;
     private static NewField textImg;
     private static GridPane mainGrid;
     private static GridPane mainGrid1;
@@ -51,7 +36,7 @@ class Form {
     private static int grid1addRowNumber = 11;
     private static int numberPoitValue = 2;
 
-    static Stage form1;
+    private static Stage form1;
     private static int i;
 
     static void display() {
@@ -81,40 +66,24 @@ class Form {
         Label labelImg = new Label("Изображения");
 
         //инициализация полей ввода
-        textName = new NewField(" ");
-        textNumber = new NewField(" ");
-        textDate = new NewField(" ");
-        textOSMUname = new NewField(" ");
-        textCadastr = new NewField(" ");
-        textArea = new NewField(" ");
-        textUnit = new NewField(" ");
-        textID = new NewField(" ");
-        textPoint1X = new NewField(" ");
-        textPoint1Y = new NewField(" ");
-        textAdres = new NewField(" ");
-        textUtil = new NewField(" ");
-        textCategory = new NewField(" ");
-        textCoordSys = new NewField(" ");
-        textImg = new NewField(" ");
-
+        NewField textName = new NewField("Name");
+        NewField textNumber = new NewField("Number");
+        NewField textDate = new NewField("Date");
+        NewField textOSMUname = new NewField("OSMU");
+        NewField textCadastr = new NewField("Cadastr");
+        NewField textArea = new NewField("Area");
+        NewField textUnit = new NewField("Unit");
+        NewField textID = new NewField("ID");
+        NewField textPoint1X = new NewField("X1");
+        NewField textPoint1Y = new NewField("Y1");
+        NewField textAdres = new NewField("Adres");
+        NewField textUtil = new NewField("Util");
+        NewField textCategory = new NewField("Category");
+        NewField textCoordSys = new NewField("Coord");
+        textImg = new NewField("Img");
 
         //ивенты для кликов
-        textName.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textName.adToArray(Controller.data, "Name",textName.getText()));
-        textNumber.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textNumber.adToArray(Controller.data, "Number",textNumber.getText()));
-        textDate.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textDate.adToArray(Controller.data, "Date",textDate.getText()));
-        textOSMUname.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textOSMUname.adToArray(Controller.data, "OSMU",textOSMUname.getText()));
-        textCadastr.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textCadastr.adToArray(Controller.data, "Cadastr",textCadastr.getText()));
-        textArea.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textArea.adToArray(Controller.data, "Area",textArea.getText()));
-        textUnit.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textUnit.adToArray(Controller.data, "Unit",textUnit.getText()));
-        textID.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textID.adToArray(Controller.data, "ID",textCoordSys.getText()));
-        textPoint1X.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textPoint1X.adToArray(Controller.data, "X1",textPoint1X.getText()));
-        textPoint1Y.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textPoint1Y.adToArray(Controller.data, "Y1",textPoint1Y.getText()));
-        textAdres.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textAdres.adToArray(Controller.data, "Adres",textAdres.getText()));
-        textUtil.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textUtil.adToArray(Controller.data, "Util",textUtil.getText()));
-        textCategory.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textCategory.adToArray(Controller.data, "Category",textCategory.getText()));
-        textCoordSys.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textCoordSys.adToArray(Controller.data, "Coord",textCoordSys.getText()));
-        textImg.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textImg.onClick(form1,Controller.data, "Img"));
-
+        textImg.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> textImg.onClick(form1,Controller.data));
 
         //кнопка формирования XML
         Button cast = new Button("Создать XML");
@@ -132,12 +101,9 @@ class Form {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-
                 gridaddFeldNumber = 5;
                 numberPoitValue = 2;
                 grid1addRowNumber = 11;
-                Controller.arrayX.clear();
-                Controller.arrayY.clear();
                 Controller.data.clear();
             }
         });
@@ -145,45 +111,41 @@ class Form {
         //кнопка добавления картинок
         Button addImg = new Button("+");
         addImg.setOnAction(e -> {
-            NewField newImg = new NewField(" ");
+            NewField newImg = new NewField("newImg"+i);
             mainGrid1.add(newImg, 1, gridaddFeldNumber);
             i++;
             gridaddFeldNumber++;
-            newImg.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> newImg.onClick(form1,Controller.data, "newImg"+i));
+            newImg.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> newImg.onClick(form1,Controller.data));
         });
 
         //кнопка добавления точки
         Button addPoint = new Button("+");
         addPoint.setOnAction(e -> {
-           // Controller.answere = false;
             Label newLabelPointX;
             Label newLabelPointY;
-            TextField newText1;
-            TextField newText2;
+            NewField newX;
+            NewField newY;
 
-            newText1 = new TextField();
-            newText2 = new TextField();
+            newX = new NewField("newX"+numberPoitValue);
+            newY = new NewField("newY"+numberPoitValue);
 
             //новые лэйблы с номером точки
             newLabelPointX = new Label("Точка" + " " + numberPoitValue + " " + "X");
             newLabelPointY = new Label("Точка" + " " + numberPoitValue + " " + "Y");
-            //увеличиваем значенеи счетчика номра строки
 
             mainGrid.add(newLabelPointX, 0, grid1addRowNumber);
-            mainGrid.add(newText1, 1, grid1addRowNumber);
+            mainGrid.add(newX, 1, grid1addRowNumber);
 
             mainGrid.add(newLabelPointY, 0, grid1addRowNumber + 1);
-            mainGrid.add(newText2, 1, grid1addRowNumber + 1);
+            mainGrid.add(newY, 1, grid1addRowNumber + 1);
+
             //увеличиваем значенеи счетчика номра строки т.к. строки 2
             grid1addRowNumber++;
             grid1addRowNumber++;
             numberPoitValue++;
-
-            //сохранение при потере фокуса
-            Controller.noFocusPoint(newText1,newText2);
         });
 
-        ////первый блок разметка
+        //первый блок разметка
         mainGrid = new GridPane();
         mainGrid.setAlignment(Pos.CENTER);
         mainGrid.setHgap(10);
@@ -274,8 +236,6 @@ class Form {
                 numberPoitValue = 2;
                 grid1addRowNumber = 11;
                 gridaddFeldNumber = 5;
-                Controller.arrayX.clear();
-                Controller.arrayY.clear();
                 Controller.data.clear();
                 form1.close();
             }
@@ -283,10 +243,10 @@ class Form {
     }
 
     private static void getStrings() throws IOException {
-        rewriteForm1(Controller.arrayX,Controller.arrayY);
+        rewriteForm1();
     }
 
-    private static void rewriteForm1(ArrayList<String> arrayX, ArrayList<String> arrayY) {
+    private static void rewriteForm1() {
         String filePath = "form1.xml";
         File xmlFile = new File(filePath);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -312,7 +272,6 @@ class Form {
             Controller.updateElementValueIntro(doc, "NewOrdinate", "Y", Controller.data.get("Y1"));
             Controller.updateElementValueIntro(doc, "NewOrdinate", "Num_Geopoint", "1");
 
-
             Controller.updateElementValue(doc, "NewParcels", "Note", Controller.data.get("Adres"));
 
             Controller.updateElementValueIntro(doc, "Utilization", "ByDoc", Controller.data.get("Util"));
@@ -323,30 +282,20 @@ class Form {
             Controller.updateElementValueIntro(doc, "AppliedFile", "Name", Controller.data.get("Img"));
 
             //определение длины массива имгс и в зависимость от этого добавление картинок
-            if (Controller.data.size() > 0) {
-                for (int j = 1; j <=  i; j++) {//добавить нужное количество новых
-                    Controller.addElement(doc, "ParcelSchema_In_Block", "AppliedFile", "Name",  Controller.data.get("newImg"+j));
-                }
+            for (int j = 0; j <=  i; j++) {//добавить нужное количество новых
+                Controller.addElement(doc, "ParcelSchema_In_Block", "AppliedFile", "Name",  Controller.data.get("newImg"+i));
             }
+//добавить нужное количество новых точек
+            for (int a = 2; a <= numberPoitValue - 1; a++) {
+                System.out.println(numberPoitValue);
 
-
-            if (arrayX.size() > 0 && arrayY.size() > 0) {
-                for (int i = 0; i <= arrayX.size() - 1; i++) {    //добавить нужное количество новых
-                    int d = i + 2;
-                    String d1 = String.valueOf(d);
-                    Node nodeName = doc.getElementsByTagName("Spatial_Element").item(0);
-                    Element newElement = doc.createElement("Spelement_Unit");
-                    nodeName.appendChild(newElement);
-                    newElement.setAttribute("Type_Unit", "Точка");
-
-
-                    Element newElement1 = doc.createElement("NewOrdinate");
-                    newElement.appendChild(newElement1);
-                    newElement1.setAttribute("Num_Geopoint", d1);
-                    newElement1.setAttribute("Y", arrayY.get(i));
-                    newElement1.setAttribute("X", arrayX.get(i));
+                Element newElement1 = doc.createElement("NewOrdinate");
+                Controller.addElement(doc,"Spatial_Element","Spelement_Unit","Type_Unit","Точка").appendChild(newElement1);
+                newElement1.setAttribute("Num_Geopoint", String.valueOf(a));
+                newElement1.setAttribute("Y", Controller.data.get("newY"+(a)));
+                newElement1.setAttribute("X", Controller.data.get("newX"+(a)));
                 }
-            }
+
             Controller.save(doc,form1);
 
         } catch (Exception exc) {

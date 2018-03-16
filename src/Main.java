@@ -31,8 +31,6 @@ public class Main extends Application {
         comboBox.setPromptText("Форма №?");
         comboBox.setStyle("-fx-font: 15px \"Calibri\";");
 
-
-
         Label labelMain = new Label("Выбор формы:");
         labelMain.setFont(Font.font("Calibri", 17));
 

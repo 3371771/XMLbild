@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SchemaParcels>
+  <eDocument GUID="8c5b607c-0e50-4257-94b1-5b5a80912dac" Version="01"/>
+  <FormingMethod FormingMethod="1"/>
+  <Document>
+    <Name>ц23у423</Name>
+    <Number>к23423</Number>
+    <Date>4234</Date>
+    <IssueOrgans>
+      <IssueOrgan>2</IssueOrgan>
+    </IssueOrgans>
+  </Document>
+  <NewParcels>
+    <NewParcel Definition="00:00:0000000:ЗУ1">
+      <CadastralBlock>2к4к</CadastralBlock>
+      <Area>
+        <Area>2342</Area>
+        <Unit>23</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="к">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Num_Geopoint="1" X="3куцк" Y="ук"/>
+          </Spelement_Unit>
+         <Spelement_Unit Type_Unit="Точка">
+<NewOrdinate Num_Geopoint="3" X="укук" Y="ук"/>
+</Spelement_Unit>
+<Spelement_Unit Type_Unit="Точка">
+<NewOrdinate Num_Geopoint="3" X="укук" Y="ук"/>
+</Spelement_Unit>
+</Spatial_Element>
+      </Entity_Spatial>
+      <Note>цук</Note>
+      <Utilization ByDoc="цук"/>
+      <Category Category="цук"/>
+    </NewParcel>
+    <NewParcel Definition="00:00:0000000:ЗУ2">
+      <CadastralBlock>00:00:0000000</CadastralBlock>
+      <Area>
+        <Area>1798</Area>
+        <Unit>055</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="ID1">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+        </Spatial_Element>
+      </Entity_Spatial>
+      <Note>Адрес участка из решения ОМСУ</Note>
+      <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>
+      <Category Category="003008000000"/>
+    </NewParcel>
+  </NewParcels>
+  <Coord_Systems>
+    <Coord_System Cs_Id="к" Name="цук"/>
+  </Coord_Systems>
+  <ParcelSchema_In_Block>
+    <AppliedFile Name="цук"/>
+  <AppliedFile Name=""/>
+</ParcelSchema_In_Block>
+</SchemaParcels>

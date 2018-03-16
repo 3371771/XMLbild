@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SchemaParcels>
+  <eDocument GUID="941f45d0-2f08-4a3e-89d8-1fe306fbd4cd" Version="01"/>
+  <FormingMethod FormingMethod="1"/>
+  <Document>
+    <Name>название</Name>
+    <Number>номер</Number>
+    <Date>дта</Date>
+    <IssueOrgans>
+      <IssueOrgan>осму</IssueOrgan>
+    </IssueOrgans>
+  </Document>
+  <NewParcels>
+    <NewParcel Definition="00:00:0000000:ЗУ1">
+      <CadastralBlock>кадастр-1</CadastralBlock>
+      <Area>
+        <Area>ареа</Area>
+        <Unit>юнит</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="ид">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate Num_Geopoint="1" X="х1" Y="у1"/>
+          </Spelement_Unit>
+         <Spelement_Unit Type_Unit="Точка">
+<NewOrdinate Num_Geopoint="3" X="" Y=""/>
+</Spelement_Unit>
+</Spatial_Element>
+      </Entity_Spatial>
+      <Note>адрес</Note>
+      <Utilization ByDoc="примененеие"/>
+      <Category Category="категория"/>
+    </NewParcel>
+    <NewParcel Definition="00:00:0000000:ЗУ2">
+      <CadastralBlock>00:00:0000000</CadastralBlock>
+      <Area>
+        <Area>1798</Area>
+        <Unit>055</Unit>
+      </Area>
+      <Entity_Spatial Ent_Sys="ID1">
+        <Spatial_Element>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+          <Spelement_Unit Type_Unit="Точка">
+            <NewOrdinate X="1234567890123456789" Y="1234567890123456789"/>
+          </Spelement_Unit>
+        </Spatial_Element>
+      </Entity_Spatial>
+      <Note>Адрес участка из решения ОМСУ</Note>
+      <Utilization ByDoc="Вид использования участка из решения ОМСУ"/>
+      <Category Category="003008000000"/>
+    </NewParcel>
+  </NewParcels>
+  <Coord_Systems>
+    <Coord_System Cs_Id="ид" Name="координат"/>
+  </Coord_Systems>
+  <ParcelSchema_In_Block>
+    <AppliedFile Name="Images\Desert.jpg"/>
+  <AppliedFile Name=""/>
+</ParcelSchema_In_Block>
+</SchemaParcels>

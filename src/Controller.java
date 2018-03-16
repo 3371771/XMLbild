@@ -4,6 +4,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.w3c.dom.*;
 
+import javax.print.Doc;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -12,14 +13,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
 
 class Controller {
-    static ArrayList<String> arrayX = new ArrayList<>();
-    static ArrayList<String> arrayY = new ArrayList<>();
     static HashMap<String, String> data = new HashMap<>();
 
     static void save(Document doc, Stage form) throws TransformerException {
@@ -72,12 +70,16 @@ class Controller {
             }
         }
     }
-    static void addElement(Document doc, String parentTag, String childTag, String attrName, String content) {
+
+    static Element addElement(Document doc, String parentTag, String childTag, String attrName, String content) {
         Node nodeName = doc.getElementsByTagName(parentTag).item(0);
         Element newElement = doc.createElement(childTag);
         nodeName.appendChild(newElement);
         newElement.setAttribute(attrName, content);
+        return newElement;
     }
+
+   // static void newElement (Document doc, String parentTag)
 
     static void openFile(TextField feldName, Stage formNumber) throws IOException {
         FileChooser fileChooser = new FileChooser();
@@ -87,21 +89,6 @@ class Controller {
         fileChooser.getExtensionFilters().add(extFilter);
         File file = fileChooser.showOpenDialog(formNumber);
         feldName.setText("Images\\" + file.getName());
-    }
-
-    static void noFocusPoint(TextField textField1, TextField textField2) {
-        textField2.focusedProperty().addListener( (obs, oldValue, newValue) -> {
-            if (newValue) {
-            } else if (textField1.getLength() != 0 | textField2.getLength() != 0) {
-                    //добавленеи в массив текста
-                    arrayX.add(textField1.getText());
-                    arrayY.add(textField2.getText());
-                    //выключение поля
-                    textField1.setDisable(true);
-                    textField2.setDisable(true);
-                //}
-            }
-        });
     }
 }
 
